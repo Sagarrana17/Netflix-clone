@@ -1,0 +1,23 @@
+import { FaImage } from "react-icons/fa"
+import { Movie } from "../typings"
+import { FaImage } from "react-icons/fa"
+
+interface Props{
+    movie:Movie
+}
+
+function Thumbnail({movie}: Props) {
+  return (
+    <div>
+        <Image
+        src={`https://image.tmdb.org/t/p/w500${
+          movie.backdrop_path || movie.poster_path
+        }`}
+        className="rounded-sm object-cover md:rounded"
+        layout="fill"
+      />
+    </div>
+  )
+}
+
+export default Thumbnail
